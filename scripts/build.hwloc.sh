@@ -1,14 +1,12 @@
 #!/bin/sh -e
 
-HWLOC_VERSION="$(ls -d ../lib/hwloc-* | awk -F'-' '{print $2}')"
-
 mkdir -p deps
 mkdir -p deps/include
 mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-cp -fr ../../lib/hwloc-${HWLOC_VERSION}/ .
+HWLOC_VERSION="$(ls -d hwloc-* | awk -F'-' '{print $2}')"
 
 cd hwloc-${HWLOC_VERSION}
 ./configure --disable-shared --enable-static --disable-io --disable-libudev --disable-libxml2

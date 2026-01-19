@@ -1,14 +1,12 @@
 #!/bin/sh -e
 
-OPENSSL_VERSION="$(ls -d ../lib/openssl-* | awk -F'-' '{print $2}')"
-
 mkdir -p deps
 mkdir -p deps/include
 mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-cp -fr ../../lib/openssl-${OPENSSL_VERSION}/ .
+OPENSSL_VERSION="$(ls -d openssl-* | awk -F'-' '{print $2}')"
 
 cd openssl-${OPENSSL_VERSION}
 ./config -no-shared -no-asm -no-zlib -no-comp -no-dgram -no-filenames -no-cms
