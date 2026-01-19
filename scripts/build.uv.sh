@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-UV_VERSION="$(ls -d ../lib/libuv-* | awk -F'-' '{print $2}')"
+UV_VERSION="1.51.0"
 
 mkdir -p deps
 mkdir -p deps/include

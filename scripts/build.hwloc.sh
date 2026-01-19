@@ -1,6 +1,10 @@
 #!/bin/sh -e
 
-HWLOC_VERSION="$(ls -d ../lib/hwloc-* | awk -F'-' '{print $2}')"
+HWLOC_VERSION_MAJOR="2"
+HWLOC_VERSION_MINOR="12"
+HWLOC_VERSION_PATCH="2"
+
+HWLOC_VERSION="${HWLOC_VERSION_MAJOR}.${HWLOC_VERSION_MINOR}.${HWLOC_VERSION_PATCH}"
 
 mkdir -p deps
 mkdir -p deps/include
