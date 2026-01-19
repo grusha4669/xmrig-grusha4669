@@ -2,6 +2,7 @@ all files tar.gz
 
 1.
 sort by date
+pick without suffix (-dist)
 https://dist.libuv.org/dist/
 
 2.
