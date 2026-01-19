@@ -1,7 +1,6 @@
 #!/bin/sh -e
 
-OPENSSL_VERSION="3.6.0"
-
+OPENSSL_VERSION="$(ls -d ../lib/openssl-* | awk -F'-' '{print $2}')"
 
 mkdir -p deps
 mkdir -p deps/include
