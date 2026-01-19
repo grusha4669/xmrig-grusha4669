@@ -8,9 +8,9 @@ mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-cp -fr ../../lib/libuv-v${UV_VERSION} .
+cp -fr ../../lib/libuv-${UV_VERSION} .
 
-cd libuv-v${UV_VERSION}
+cd libuv-${UV_VERSION}
 sh autogen.sh
 ./configure --disable-shared
 make -j$(nproc || sysctl -n hw.ncpu || sysctl -n hw.logicalcpu)
