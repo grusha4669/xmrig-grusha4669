@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-UV_VERSION="$(ls -d ../lib/libuv-* | awk -F'-v' '{print $2}')"
+UV_VERSION="$(ls -d ../lib/libuv-v* | awk -F'-v' '{print $2}')"
 
 mkdir -p deps
 mkdir -p deps/include
@@ -8,7 +8,7 @@ mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-cp -fr ../../lib/libuv-v${UV_VERSION} .
+cp -fr ../../lib/libuv-v${UV_VERSION}/ .
 
 cd libuv-v${UV_VERSION}
 sh autogen.sh

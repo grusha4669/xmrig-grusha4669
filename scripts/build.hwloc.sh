@@ -8,7 +8,7 @@ mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-cp -fr ../../lib/hwloc-${HWLOC_VERSION} .
+cp -fr ../../lib/hwloc-${HWLOC_VERSION}/ .
 
 cd hwloc-${HWLOC_VERSION}
 ./configure --disable-shared --enable-static --disable-io --disable-libudev --disable-libxml2

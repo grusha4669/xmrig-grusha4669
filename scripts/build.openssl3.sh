@@ -8,7 +8,7 @@ mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-cp -fr ../../lib/openssl-${OPENSSL_VERSION} .
+cp -fr ../../lib/openssl-${OPENSSL_VERSION}/ .
 
 cd openssl-${OPENSSL_VERSION}
 ./config -no-shared -no-asm -no-zlib -no-comp -no-dgram -no-filenames -no-cms
