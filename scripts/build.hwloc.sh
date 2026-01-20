@@ -6,9 +6,9 @@ mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-HWLOC_VERSION="$(ls -d hwloc-* | awk -F'-' '{print $2}')"
+git clone https://github.com/open-mpi/hwloc.git 
+cd hwloc/
 
-cd hwloc-${HWLOC_VERSION}
 ./configure --disable-shared --enable-static --disable-io --disable-libudev --disable-libxml2
 make -j$(nproc || sysctl -n hw.ncpu || sysctl -n hw.logicalcpu)
 cp -fr include ../../deps

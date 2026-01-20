@@ -6,9 +6,9 @@ mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-OPENSSL_VERSION="$(ls -d openssl-* | awk -F'-' '{print $2}')"
+git clone https://github.com/openssl/openssl.git
+cd openssl/
 
-cd openssl-${OPENSSL_VERSION}
 ./config -no-shared -no-asm -no-zlib -no-comp -no-dgram -no-filenames -no-cms
 make -j$(nproc || sysctl -n hw.ncpu || sysctl -n hw.logicalcpu)
 cp -fr include ../../deps

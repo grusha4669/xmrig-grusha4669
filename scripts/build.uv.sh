@@ -6,9 +6,9 @@ mkdir -p deps/lib
 
 mkdir -p build && cd build
 
-UV_VERSION="$(ls -d libuv-v* | awk -F'-v' '{print $2}')"
+git clone https://github.com/libuv/libuv.git
+cd libuv/
 
-cd libuv-v${UV_VERSION}
 sh autogen.sh
 ./configure --disable-shared
 make -j$(nproc || sysctl -n hw.ncpu || sysctl -n hw.logicalcpu)
